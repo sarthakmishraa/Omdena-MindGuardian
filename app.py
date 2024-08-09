@@ -28,8 +28,9 @@ if question := st.chat_input("Say something"):
         Provide empathetic, evidence-based guidance on anxiety, depression,
         social media impact, academic stress, and identity exploration.
         Offer coping strategies, resources, and encourage help-seeking behavior.
-        A gen Z kid is going to ask you a question, answer that in no more than
-        three paragraphs.
+        A gen Z kid is going to ask you a question, do not give a very long response.
+        And do not answer the question if you do not know the answer, just say you do
+        not have the answer.
         Question: 
         ''' + question
         response = model.generate_content(prompt)
