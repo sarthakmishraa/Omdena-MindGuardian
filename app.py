@@ -3,11 +3,15 @@ import time
 from streamlit_option_menu import option_menu
 import google.generativeai as genai
 
-API_KEY = st.secrets["GOOGLE_API_KEY"]
+# API_KEY = st.secrets["GOOGLE_API_KEY"]
 
-genai.configure(api_key=API_KEY)
+# genai.configure(api_key=API_KEY)
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+# model = genai.GenerativeModel("gemini-1.5-flash")
+
+st.image("assets/omdenaLogo.png",
+        caption="Creating Impact through AI",
+        width=240)
 
 with st.sidebar:
     selected = option_menu(
@@ -85,95 +89,10 @@ if selected == "Goals and Outcomes":
 
 if selected == "Collaborators":
     st.title("Collaborators")
-
-    st.markdown(
-        "<div\
-            style='text-align:center'\
-        >\
-            <h3>Data Collection Team</h3>\
-            <div style='display:flex; justify-content: space-around'>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Paul Turyahabwa</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Kevin Medri</h4>\
-                    <h5>Lead</h5>\
-                </div>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Mahmudul Hasan</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-            </div>\
-            <hr>\
-            <h3>Data Preprocessing Team</h3>\
-            <div style='display:flex; justify-content: space-around'>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Paul Turyahabwa</h4>\
-                    <h5>Lead</h5>\
-                </div>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Sanghamirta Basu</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-            </div>\
-            <hr>\
-            <h3>Exploratory Data Analysis Team</h3>\
-            <div style='display:flex; justify-content: space-around''>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Paul Turyahabwa</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Liyana M Bava</h4>\
-                    <h5>Lead</h5>\
-                </div>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Andrew Asher</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-            </div>\
-            <hr>\
-            <h3>Model Development Team</h3>\
-            <div style='display:flex; justify-content: space-around''>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Omkar Bhatkande</h4>\
-                    <h5>Co-lead</h5>\
-                    <h5><a href='https://www.linkedin.com/in/omkar-bhatkande/'>LinkedIn</a></h5>\
-                </div>\
-                <div>\
-                    <img src='./assets/sarthak.jpg' alt='profile' />\
-                    <h4>Hemanth Sai</h4>\
-                    <h5>Co-lead</h5>\
-                </div>\
-            </div>\
-            <hr>\
-            <h3>Model Deployment Team</h3>\
-            <div style='display:flex; justify-content: space-around''>\
-                <div>\
-                    <img src='assets/sarthak.jpg' alt='profile' />\
-                    <h4>Sarthak Mishra</h4>\
-                    <h5>Co-lead</h5>\
-                    <h5><a href='https://www.linkedin.com/in/sarthakmishraa/'>LinkedIn</a></h5>\
-                </div>\
-            </div>\
-            <hr>\
-        </div>", unsafe_allow_html=True)
+    st.html("./collaborators.html")
 
 if selected == "Home":
-    st.image("assets/omdenaLogo.png",
-             caption="Creating Impact through AI",
-             width=240)
-    
+    st.title("MindGuardian")
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
